@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9f6f2">
+  <meta name="description" content="玖點茶飲｜學餐手機掃碼點餐模擬網站">
+  <title>玖點茶飲・手機點餐 DEMO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand-symbol" aria-hidden="true">九</div>
+      <div class="brand-copy"><strong>玖點茶飲</strong><span>nine o'clock · 校園點餐</span></div>
+      <span class="demo-tag">DEMO</span>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy"><span class="eyebrow">NINE O’CLOCK TEA</span><h1>一杯剛剛好的<br><em>日常小確幸。</em></h1><p>選一杯喜歡的飲料，慢慢喝，慢慢過今天。</p><a href="#menu" class="hero-link">開始選飲料 <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-deco" aria-hidden="true"><span class="hero-cup">✳</span><span class="hero-straw"></span></div>
+      </section>
+      <section class="menu-section" id="menu">
+        <div class="section-title"><div><span class="eyebrow">ORDER NOW</span><h2>今天想喝什麼？</h2></div><span class="menu-count" id="menuCount"></span></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="搜尋飲料名稱..." autocomplete="off"><span class="sr-only">搜尋飲料</span></label>
+        <nav id="categories" class="categories" aria-label="飲料分類"></nav>
+        <div id="drinkList" class="drink-list"></div>
+      </section>
+      <footer class="footer-note">玖點茶飲 · 期中專題模擬點餐系統<br>本網站僅供課堂展示，不會送出真實訂單或收款。</footer>
+    </main>
+  </div>
+
+  <div class="bottom-bar" id="bottomBar"><div class="bottom-inner"><button id="openCartBtn" class="cart-open" type="button"><span class="bag-icon">♧<span id="cartBadge" class="cart-badge">0</span></span><span><strong id="bottomCount">尚未選擇飲料</strong><small>點擊查看購物車</small></span></button><button type="button" id="bottomCheckout" class="checkout-pill">查看購物車 <span id="bottomTotal">$0</span></button></div></div>
+
+  <div id="modalBackdrop" class="overlay" hidden></div>
+  <section id="customModal" class="sheet" role="dialog" aria-modal="true" aria-labelledby="customTitle" hidden>
+    <div class="sheet-handle"></div><div class="sheet-heading"><div><span class="eyebrow">CUSTOMIZE YOUR DRINK</span><h2 id="customTitle">客製化飲料</h2></div><button type="button" class="icon-btn" id="closeCustom" aria-label="關閉客製化視窗">×</button></div>
+    <div class="sheet-content">
+      <p id="customCategory" class="custom-hint"></p>
+      <fieldset class="option-group"><legend>杯型 <span>SIZE</span></legend><div id="sizeOptions" class="choice-grid"></div></fieldset>
+      <fieldset class="option-group"><legend>甜度 <span>SUGAR</span></legend><div id="sugarOptions" class="choice-grid three"></div></fieldset>
+      <fieldset class="option-group"><legend>冰量 <span>ICE</span></legend><div id="iceOptions" class="choice-grid four"></div></fieldset>
+      <fieldset class="option-group"><legend>加點料 <span>TOPPINGS · 可複選</span></legend><div id="toppingOptions" class="topping-grid"></div></fieldset>
+      <div class="notice"><span aria-hidden="true">✦</span> 甜度、冰量選項為模擬介面，實際供應以店家為準。</div>
+    </div>
+    <div class="sheet-actions"><div class="quantity-control"><button id="customMinus" type="button" aria-label="減少杯數">−</button><strong id="customQty">1</strong><button id="customPlus" type="button" aria-label="增加杯數">＋</button></div><button id="addCartBtn" type="button" class="primary-btn">加入購物車 <span id="customPrice">$0</span></button></div>
+  </section>
+
+  <section id="cartModal" class="sheet" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
+    <div class="sheet-handle"></div><div class="sheet-heading"><div><span class="eyebrow">YOUR ORDER</span><h2 id="cartTitle">我的購物車</h2></div><button type="button" class="icon-btn" id="closeCart" aria-label="關閉購物車">×</button></div>
+    <div id="cartItems" class="sheet-content cart-list"></div>
+    <div class="cart-summary"><div><span>總杯數</span><strong id="cartQty">0 杯</strong></div><div><span>合計金額</span><strong id="cartTotal">NT$ 0</strong></div></div>
+    <div class="sheet-actions"><button class="secondary-btn" id="continueShopping" type="button">繼續選購</button><button class="primary-btn" id="placeOrder" type="button">模擬送出訂單</button></div>
+  </section>
+
+  <section id="doneModal" class="sheet center-sheet" role="dialog" aria-modal="true" aria-labelledby="doneTitle" hidden>
+    <div class="sheet-handle"></div><div class="done-icon">✓</div><h2 id="doneTitle">模擬訂單已建立！</h2><p>這是期中專題展示，沒有真正送出給飲料店。</p><div id="orderSummary" class="receipt"></div><button type="button" class="primary-btn full" id="doneClose">完成，返回菜單</button>
+  </section>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
