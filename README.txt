@@ -27,3 +27,5 @@ JavaScript：const/let、array/object、map/filter/find/reduce、箭頭函式、
 - 甜度、冰量選項依菜單文字；特定飲品是否可調糖/冰未向店家確認，故一律標示模擬。
 - 購物車目前保存在頁面記憶體，重新整理就會清空（適合展示）。
 - 若老師要求 SCSS，可將 style.css 改寫為 style.scss 再用 Vite/Sass 編譯；本版直接以純 CSS 供零安裝開啟。
+
+更新：首頁改為原生 SVG 淡紫色茶杯線條插圖；飲料卡片裝飾改為 CSS 線條，避免手機 emoji 變色。

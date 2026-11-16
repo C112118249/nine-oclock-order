@@ -35,7 +35,7 @@ function renderDrinks(){
  $('drinkList').innerHTML=matched.length ? matched.map(d=>{
   const priceList=Object.entries(d.prices).map(([s,p])=>`${s} $${p}`).join(' / ');
   const artClass=d.category==='鮮奶'||d.category==='奶茶'||d.category==='奶蓋'||d.category==='豆漿'?'milk':d.category==='新鮮'?'fresh':d.category==='氣泡'?'soda':d.category==='特調'?'special':'';
-  return `<article class="drink-card"><div class="drink-art ${artClass}" aria-hidden="true"><span class="art-star">✧</span></div><div class="drink-info"><h3>${escapeHTML(d.name)}</h3><p>${escapeHTML(d.category)} · ${escapeHTML(priceList)}</p><div class="drink-price">${dollar(Math.min(...Object.values(d.prices)))} <small>起</small></div></div><button type="button" class="add-button" data-drink="${d.id}" aria-label="客製化${escapeHTML(d.name)}">＋</button></article>`
+  return `<article class="drink-card"><div class="drink-art ${artClass}" aria-hidden="true"><span class="art-star"></span></div><div class="drink-info"><h3>${escapeHTML(d.name)}</h3><p>${escapeHTML(d.category)} · ${escapeHTML(priceList)}</p><div class="drink-price">${dollar(Math.min(...Object.values(d.prices)))} <small>起</small></div></div><button type="button" class="add-button" data-drink="${d.id}" aria-label="客製化${escapeHTML(d.name)}">＋</button></article>`
  }).join(''):'<div class="empty-results">沒有找到符合的飲料，試試其他關鍵字吧。</div>';
 }
 function showModal(which){ $('modalBackdrop').hidden=false;[ 'customModal','cartModal','doneModal'].forEach(id=>$(id).hidden=id!==which);document.body.style.overflow='hidden';setTimeout(()=>$(which).querySelector('button')?.focus(),0)}

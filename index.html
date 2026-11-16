@@ -19,7 +19,20 @@
     <main>
       <section class="hero">
         <div class="hero-copy"><span class="eyebrow">NINE O’CLOCK TEA</span><h1>一杯剛剛好的<br><em>日常小確幸。</em></h1><p>選一杯喜歡的飲料，慢慢喝，慢慢過今天。</p><a href="#menu" class="hero-link">開始選飲料 <span aria-hidden="true">↗</span></a></div>
-        <div class="hero-deco" aria-hidden="true"><span class="hero-cup">✳</span><span class="hero-straw"></span></div>
+        <div class="hero-deco" aria-hidden="true">
+          <svg class="tea-illustration" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="90" r="76" stroke="currentColor" stroke-opacity=".25" stroke-width="1"/>
+            <circle cx="90" cy="90" r="62" stroke="currentColor" stroke-opacity=".17" stroke-width="1" stroke-dasharray="2 6"/>
+            <path d="M58 78H120L114 130C113 137 108 142 101 142H77C70 142 65 137 64 130L58 78Z" fill="#E5CED4" fill-opacity=".55" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+            <path d="M63 98H116L113 130C112 135 108 139 101 139H77C71 139 67 135 66 129L63 98Z" fill="#B68C76" fill-opacity=".35"/>
+            <path d="M54 77H124" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M105 79L112 47" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M55 150H124" stroke="currentColor" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/>
+            <path d="M45 53V65M39 59H51" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="133" cy="55" r="2.5" fill="currentColor" fill-opacity=".55"/>
+            <circle cx="45" cy="115" r="2" fill="currentColor" fill-opacity=".3"/>
+          </svg>
+        </div>
       </section>
       <section class="menu-section" id="menu">
         <div class="section-title"><div><span class="eyebrow">ORDER NOW</span><h2>今天想喝什麼？</h2></div><span class="menu-count" id="menuCount"></span></div>
@@ -42,7 +55,7 @@
       <fieldset class="option-group"><legend>甜度 <span>SUGAR</span></legend><div id="sugarOptions" class="choice-grid three"></div></fieldset>
       <fieldset class="option-group"><legend>冰量 <span>ICE</span></legend><div id="iceOptions" class="choice-grid four"></div></fieldset>
       <fieldset class="option-group"><legend>加點料 <span>TOPPINGS · 可複選</span></legend><div id="toppingOptions" class="topping-grid"></div></fieldset>
-      <div class="notice"><span aria-hidden="true">✦</span> 甜度、冰量選項為模擬介面，實際供應以店家為準。</div>
+      <div class="notice"><span class="notice-mark" aria-hidden="true"></span> 甜度、冰量選項為模擬介面，實際供應以店家為準。</div>
     </div>
     <div class="sheet-actions"><div class="quantity-control"><button id="customMinus" type="button" aria-label="減少杯數">−</button><strong id="customQty">1</strong><button id="customPlus" type="button" aria-label="增加杯數">＋</button></div><button id="addCartBtn" type="button" class="primary-btn">加入購物車 <span id="customPrice">$0</span></button></div>
   </section>
